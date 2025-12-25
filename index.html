@@ -1,0 +1,1177 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>成人🔞免费AV</title>
+    <!-- 内联关键CSS，减少HTTP请求 -->
+    <style>
+        /* 重置样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            max-width: 640px;
+            margin: 0 auto;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        /* 电脑端居中显示 - 修复滚动问题 */
+        @media (min-width: 768px) {
+            body {
+                position: relative;
+                width: 640px;
+                margin: 20px auto;
+                border-radius: 20px;
+                box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+                overflow-y: auto;
+                min-height: auto;
+                max-height: calc(100vh - 40px);
+            }
+            
+            /* 自定义滚动条样式 */
+            body::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            body::-webkit-scrollbar-track {
+                background: #1a1a1a;
+                border-radius: 4px;
+            }
+            
+            body::-webkit-scrollbar-thumb {
+                background: #444;
+                border-radius: 4px;
+            }
+            
+            body::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+        }
+        
+        /* 轮播图样式 */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+        
+        .carousel-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .carousel-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            pointer-events: none;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .carousel-indicator.active {
+            background: #ffffff;
+        }
+        
+        /* 分类图标样式 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background: #1a1a1a;
+        }
+        
+        .category-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .category-item:active {
+            transform: scale(0.95);
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .category-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-name {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        /* 电影列表样式 */
+        .movie-section {
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .more-link {
+            font-size: 14px;
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .movie-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        
+        .movie-item {
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #1a1a1a;
+            display: flex;
+            min-height: 100px;
+            height: auto;
+        }
+        
+        .movie-poster {
+            width: 150px;
+            height: auto;
+            min-height: 100px;
+            max-height: 150px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #000;
+        }
+        
+        .movie-content {
+            flex: 1;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 0;
+        }
+        
+        .movie-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .movie-desc {
+            font-size: 12px;
+            color: #999;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+        
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        
+        .movie-rating {
+            background: rgba(255,215,0,0.2);
+            color: #ffd700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .movie-duration {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .movie-item:hover .play-overlay {
+            opacity: 1;
+        }
+        
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-size: 20px;
+        }
+        
+        /* 播放器模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            z-index: 1001;
+            cursor: pointer;
+        }
+        
+        .video-container {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            max-height: 80vh;
+        }
+        
+        /* 加载动画 */
+        .loading {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* 错误提示 */
+        .error-message {
+            text-align: center;
+            color: #ff6b6b;
+            padding: 20px;
+        }
+        
+        .error-message i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        
+        /* 脚注样式 */
+        footer {
+            background: #1a1a1a;
+            padding: 30px 20px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 轮播图 -->
+    <section class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <!-- 轮播图项目 1 -->
+            <div class="carousel-item" onclick="goToLink('https://oj1b395vi6l.74716090.cc/" class="category-item')">
+                <img src="https://28-psd.htr.neonsole.arounders.net:9481/232CPA/spk/black300x200-2.gif" alt="轮播图1">
+                <div class="carousel-overlay">
+                    <h2 class="text-xl font-bold">注册送8888</h2>
+                    <p class="text-sm text-gray-300">信誉老台子</p>
+                </div>
+            </div>
+            <!-- 轮播图项目 2 -->
+            <div class="carousel-item" onclick="goToLink('https://2pg.9147508.cc/')">
+                <img src="https://imgsa.baidu.com/forum/pic/item/0b55b319ebc4b745a48c520589fc1e178a82158d.jpg" alt="轮播图2">
+                <div class="carousel-overlay">
+                    <h2 class="text-xl font-bold">PG大放水</h2>
+                    <p class="text-sm text-gray-300">注册送888</p>
+                </div>
+            </div>
+            <!-- 轮播图项目 3 -->
+            <div class="carousel-item" onclick="goToLink('http://tzttwyyqjuyv-mxczk-521024910.ap-northeast-1.elb.amazonaws.com/?shareName=165sx1894')">
+                <img src="https://pg777111.img3784715638.com:8585/8888/pg507/320-185.gif" alt="轮播图3">
+                <div class="carousel-overlay">
+                    <h2 class="text-xl font-bold">博彩通</h2>
+                    <p class="text-sm text-gray-300">注册送888</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-indicators" id="carouselIndicators"></div>
+    </section>
+    <!-- 分类图标 -->
+    <section class="category-grid">
+       <!-- 分类图标 1 - 澳门金沙 -->
+        <a href="https://w7773381.vip/" class="category-item">
+            <div class="category-icon">
+                <img src="https://bb56367813.com/cb3b8416501145628dbf309492605e81.gif" alt="澳门金沙">
+            </div>
+            <div class="category-name">澳门金沙</div>
+        </a>
+        <!-- 分类图标 2 - PG娱乐城 -->
+        <a href="https://www.9909042.com/?&coverStatus=1&shareSource=0" class="category-item">
+            <div class="category-icon">
+                <img src="https://collision3550.top/b7307118fb42b64017dea3e5f313a9c8.gif" alt="PG娱乐城">
+            </div>
+            <div class="category-name">PG娱乐城</div>
+        </a>
+
+		
+        <!-- 分类图标 3 - 注册送8888 -->
+        <a href="https://hafjqtl.vip/" class="category-item">
+            <div class="category-icon">
+                <img src="https://p0.meituan.net/video/2eaeda9483f609d454d489fccd8746fa616474.gif" alt="注册送8888">
+            </div>
+            <div class="category-name">注册送8888</div>
+        </a>
+
+ 
+		
+
+       
+        <!-- 分类图标 6 - PG新葡京 -->
+        <a href="https://146.103.87.104:5001/?dl=$5bzgh3$CNY$2" class="category-item">
+            <div class="category-icon">
+                <img src="https://txdy.asdf010.com/i/99/xxpj-200-200.gif" alt="PG新葡京">
+            </div>
+            <div class="category-name">PG新葡京</div>
+        </a>
+        <!-- 分类图标 7 - 澳门新威尼斯 -->
+        <a href="https://oj1b395vi6l.74716090.cc/" class="category-item">
+            <div class="category-icon">
+                <img src="https://imgsa.baidu.com/forum/pic/item/a08b87d6277f9e2f19fe9b1b5930e924b999f3de.jpg" alt="澳门新威尼斯">
+            </div>
+            <div class="category-name">澳门新威尼斯</div>
+        </a>
+        <!-- 分类图标 8 - 澳门银河 -->
+        <a href="https://108.187.0.188:1113/299ad/a99le.html" class="category-item">
+            <div class="category-icon">
+                <img src="https://b9.ks6299.top/6af7123b52b1ad7b00aab16d22f8d61e.gif" alt="澳门银河">
+            </div>
+            <div class="category-name">澳门银河</div>
+        </a>
+	
+		 
+<a href="https://f25040801-d59546771068e761.elb.ap-east-1.amazonaws.com:8088/" class="category-item">
+            <div class="category-icon">
+                <img src="https://p1.meituan.net/video/1c13e5224e03727d1ca2abe43ae6e49d437849.gif" alt="熊猫体育">
+            </div>
+            <div class="category-name">熊猫体育</div>
+        </a>
+
+<a href="https://q092501-644b2cd4710476b4.elb.ap-east-1.amazonaws.com/?channelCode=361qp-2503&ucid=0242ac120002&utid=6ZqU5rGf54q55aCq5ZCO5bqt6Iqx#/" class="category-item">
+            <div class="category-icon">
+                <img src="	https://p1.meituan.net/video/693429ec28e9b69eaafa7c1b171e557324128.png" alt="博彩通">
+            </div>
+            <div class="category-name">博彩通</div>
+        </a>
+		<!-- 分类图标 10 - 成人视频 -->
+        <a href="https://xn--20251021x-ju0w.baihu45.buzz/bhsp/" class="category-item">
+            <div class="category-icon">
+                <img src="https://p1.meituan.net/video/2edfd7c2f41cc04a64e6b7ac8c016fee246064.gif" alt="成人视频">
+            </div>
+            <div class="category-name">成人视频</div>
+        </a>
+
+		
+	<!-- 分类图标 10 - 成人视频 -->
+        <a href="https://tgngv312.vip/?channelCode=HK12" class="category-item">
+            <div class="category-icon">
+                <img src="https://raw.githubusercontent.com/xingxing890/baidu.com/refs/heads/main/images/document_4904483972039312939.gif" alt="全国空降">
+            </div>
+            <div class="category-name">全国空降</div>
+        </a>
+
+		
+
+
+	
+    </section>
+    <!-- 热门推荐 -->
+    <section class="movie-section">
+        <div class="section-title">
+            <span>热门推荐</span>
+            <a href="https://aiqing-xx.github.io/18xx.cc/" class="more-link">每日一更<i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="movie-grid" id="hotMovies">
+            <!-- 电影项目 1 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250710/nnw5e4wY/1100kb/hls/index.m3u8', '佳芯')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250711-1/d3fa18e1e1ac1fc4454c44895f91bad6.png" alt="佳芯" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">佳芯</div>
+                        <div class="movie-desc">【佳芯】XKG083 陌陌约炮性感瑜伽教练</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">9.2</div>
+                        <div class="movie-duration">23分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 2 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250716/xlY9EdpB/2166kb/hls/index.m3u8', '金宝娜')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250712-1/2079211cbc3066a8344dcc6c47d79d9a.png" alt="金宝娜" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">金宝娜</div>
+                        <div class="movie-desc">【金宝娜 】DY03-EP2 我带男友去前男友家饭店借住，结果男友恶作剧，要我在前男友背后</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.8</div>
+                        <div class="movie-duration">50分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 3 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250716/VQkVhaJj/2113kb/hls/index.m3u8', '沈娜娜')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250717-1/5cb54cb00edf78833caad5517e1ed32f.png" alt="沈娜娜" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">沈娜娜</div>
+                        <div class="movie-desc">【沈娜娜】MCY0143 迷药催眠性感新婚嫂子</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.5</div>
+                        <div class="movie-duration">23分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 4 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250716/t3OBpReF/2171kb/hls/index.m3u8', '佳芯')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250717-1/bb33edbaddc8b08190dae5d5c9f2a967.png" alt="佳芯" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">佳芯</div>
+                        <div class="movie-desc">【佳芯】JDYL016 快递员侵犯女主播</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.3</div>
+                        <div class="movie-duration">32分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 5 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250715/PstyElYL/1100kb/hls/index.m3u8', '羽芮')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250716-1/1d1b07a5ba225c355938246fcef1df78.png" alt="羽芮" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">羽芮</div>
+                        <div class="movie-desc">【羽芮】TMW120 情侣考验赛在男友面前被干到高潮</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.0</div>
+                        <div class="movie-duration">34分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 6 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250715/0SqSKOYv/1100kb/hls/index.m3u8', '国产经典四级片')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250716-1/96bd3a6065c7a17a5d9851a449ab63ad.png" alt="国产经典四级片" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">国产经典四级片</div>
+                        <div class="movie-desc">【国产经典四级片】三点全露 在VCD碟片不能播的片段</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">7.8</div>
+                        <div class="movie-duration">23分钟</div>
+
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<div class="mm-content">
+<div class="row">
+<style>
+    .hf60{
+        height: 60px; 
+    }
+    .hf120{
+        height: 120px; 
+    }
+    .hf180{
+        height: 180px; 
+    }
+    .hf240{
+        height: 240px; 
+    }
+    @media (max-width: 960px){
+        .hf60{
+            height: 6.25vw; 
+        }
+        .hf120{
+            height: 12.5vw; 
+        }
+        .hf180{
+            height: 18.75vw; 
+        }
+        .hf240{
+            height: 25vw; 
+        }
+    }
+</style>
+
+
+
+<!--C K #4-->
+<div><a href="https://copeiajp.shilanhua.com/pjef56fg/pehuy78.html?shareName=pjlssn"target="_blank">
+<img class="hf120" src="https://aliyun.png-0329.ccjjdwt.com/2024/718/960X120.webp" border="0" width="100%" style="border: 1px inset #FFC107')"></a></div>
+
+
+<!--C K #4-->
+<div><a href="https://dg1qv.127-8-xz-wnvnzxewt.cc/normal/?cid=2101408"target="_blank">
+<img class="hf120" src="https://www.qloxy-35839.cc/mgm/mgm960u80.gif" border="0" width="100%" style="border: 1px inset #FFC107')"></a></div>
+
+
+
+<!--&#40857;&#24040; &#24320;&#20803;-->
+<div><a href="https://yes.2061475.cc:2020/88.html?cid=6904431"target="_blank">
+<img class="hf120" src="https://images.20images17.com:6699/images/960x120.gif" border="0" width="100%" style="border: 1px inset #FFC107')"></a></div>
+
+<!--Be &#33457;&#24433;&#30452;&#25773;-->
+<div><a href="https://qdff.msupswh.com:7102/74/hy004.html"target="_blank">
+<img class="hf120" src="https://img.cospu2055.top/imi960x120.gif" border="0" width="100%" style="border: 1px inset #FFC107')"></a></div>
+
+<!--&#20449;&#35465;&#21512;&#20316; &#26447;&#33457;&#30452;&#25773;-->
+<!--<div><a href="https://sdefr21.yitaocun.com/by/?channelCode=xh73"target="_blank">-->
+<!--<img class="hf120" src="https://img.cospu2055.top/imi960x120.gif" border="0" width="100%" style="border: 1px inset #f58899"></a></div>-->
+
+<!--kenn &#23041;&#23612;&#26031;-->
+<div><a href="https://1j3bogdlv3ai.13209983.cc/"target="_blank">
+<img class="hf120" src="https://imgsa.baidu.com/forum/pic/item/3812b31bb051f819e49c555c9cb44aed2e73e76f.jpg" border="0" width="100%" style="border: 1px inset #FFC107')"></a></div>
+
+
+<!--686 PG&#23089;&#20048;&#22478;-->
+<div><a href="https://23.99.108.189"target="_blank">
+<img class="hf120" src="https://imgoss820.top/2929-960x120.gif" border="0" width="100%" style="border: 1px inset #f58899"></a></div>
+    <!-- 最新上映 -->
+    <section class="movie-section">
+        <div class="section-title">
+            <span>最新上映</span>
+            <a href="https://aiqing-xx.github.io/18xx.cc/" class="more-link">每日一更<i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="movie-grid" id="newMovies">
+            <!-- 电影项目 1 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250705/GBgEMmTD/1100kb/hls/index.m3u8', '羽芮')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250706-1/824dde44544670b9e79ada613cd25723.png" alt="羽芮" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">羽芮</div>
+                        <div class="movie-desc">【羽芮】TMG057 御姐人妻浴巾下的爆乳蜂腰</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">9.0</div>
+                        <div class="movie-duration">33分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 2 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250706/jlET9pPz/1100kb/hls/index.m3u8', '艾儿')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250707-1/806ebbe75881cfbcef2b6bbccc2716da.png" alt="艾儿" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">艾儿</div>
+                        <div class="movie-desc">【艾儿】WTB001 强制妊娠 地方的爸爸需要女儿</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.7</div>
+                        <div class="movie-duration">16分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 3 -->
+            <div class="movie-item" onclick="playVideo('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', '董欣')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250709-1/49c9dfee5698598f8b061df8372d66a6.png" alt="董欣" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">董欣</div>
+                        <div class="movie-desc">【董欣】GDCM008 劳模理疗师上</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.4</div>
+                        <div class="movie-duration">19分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 4 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250704/QYQ77Q2k/1100kb/hls/index.m3u8', '素人')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250705-1/1ccd8ead8d1cf9f6b94ce279c5620e6b.png" alt="素人" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">素人</div>
+                        <div class="movie-desc">【素人】PH200 隐形衣 属于你的乱干时刻</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.1</div>
+                        <div class="movie-duration">22分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 5 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250708/g4ZZsRhj/1100kb/hls/index.m3u8', '徐艳')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250709-1/a006cd628db67640f4d6f75917f2e159.png" alt="徐艳" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">徐艳</div>
+                        <div class="movie-desc">【徐艳】MSD0167 操上大运会川妹子闭幕会的骚B特训</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.9</div>
+                        <div class="movie-duration">16分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 电影项目 6 -->
+            <div class="movie-item" onclick="playVideo('https://jpxm3u8.com/20250710/YKrj5MGP/1100kb/hls/index.m3u8', '童汐')">
+                <img src="https://jpgjingpinx1.top/upload/vod/20250711-1/154b8749ff930f5a82c797390842d1f7.png" alt="童汐" class="movie-poster">
+                <div class="movie-content">
+                    <div>
+                        <div class="movie-title">童汐</div>
+                        <div class="movie-desc">【童汐】XK8039 少妇白洁1 新婚少妇惨遭迷奸绿帽老公笑脸相迎</div>
+                    </div>
+                    <div class="movie-meta">
+                        <div class="movie-rating">8.2</div>
+                        <div class="movie-duration">15分钟</div>
+                    </div>
+                </div>
+                <div class="play-overlay">
+                    <div class="play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 脚注 -->
+    <footer>
+        <div class="footer-links">
+            
+            <a href="https://t.me/xiaocaishen86">商务渠道合作</a>
+            
+        </div>
+        <p>&copy; 2024 成人🔞免费AV. All rights reserved.</p>
+        <p>京ICP备12345678号</p>
+    </footer>
+    <!-- 视频播放模态框 -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <div class="modal-close" onclick="closeVideo()">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="video-container" id="videoContainer">
+                <!-- 视频播放器将在这里动态创建 -->
+            </div>
+        </div>
+    </div>
+    <!-- 延迟加载外部库 -->
+    <script>
+        // 延迟加载外部库，加快首屏渲染
+        function loadExternalLibraries() {
+            // 加载Font Awesome
+            const faLink = document.createElement('link');
+            faLink.rel = 'stylesheet';
+            faLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+            document.head.appendChild(faLink);
+            
+            // 加载HLS.js
+            const hlsScript = document.createElement('script');
+            hlsScript.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
+            hlsScript.onload = function() {
+                console.log('HLS.js loaded');
+            };
+            document.head.appendChild(hlsScript);
+        }
+        
+        // 页面加载完成后延迟加载外部库
+        window.addEventListener('load', function() {
+            setTimeout(loadExternalLibraries, 100);
+        });
+    </script>
+    <script>
+        // 轮播图功能
+        let currentSlide = 0;
+        const carouselInner = document.getElementById('carouselInner');
+        const indicatorsContainer = document.getElementById('carouselIndicators');
+        const totalSlides = 3;
+        
+        // 创建指示器
+        for (let i = 0; i < totalSlides; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = `carousel-indicator ${i === 0 ? 'active' : ''}`;
+            indicator.onclick = () => goToSlide(i);
+            indicatorsContainer.appendChild(indicator);
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+            
+            // 更新指示器
+            document.querySelectorAll('.carousel-indicator').forEach((ind, i) => {
+                ind.classList.toggle('active', i === index);
+            });
+        }
+        
+        // 自动轮播
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, 3000);
+        
+        // 视频播放功能
+        let currentVideo = null;
+        let hls = null;
+        
+        function playVideo(videoUrl, title) {
+            const modal = document.getElementById('videoModal');
+            const videoContainer = document.getElementById('videoContainer');
+            
+            modal.classList.add('active');
+            
+            // 清空容器
+            videoContainer.innerHTML = '<div class="loading"></div>';
+            
+            // 检查视频格式
+            if (videoUrl.includes('.m3u8')) {
+                // M3U8格式，使用HLS.js
+                if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+                    try {
+                        // 销毁之前的实例
+                        if (hls) {
+                            hls.destroy();
+                        }
+                        
+                        // 创建video元素
+                        const video = document.createElement('video');
+                        video.controls = true;
+                        video.autoplay = true;
+                        video.playsInline = true; // 移动端内联播放
+                        video.style.width = '100%';
+                        video.style.height = '100%';
+                        video.style.maxHeight = '80vh';
+                        video.setAttribute('webkit-playsinline', ''); // iOS支持
+                        video.setAttribute('playsinline', ''); // 标准属性
+                        
+                        // 创建HLS实例
+                        hls = new Hls({
+                            debug: false,
+                            enableWorker: true,
+                            lowLatencyMode: false,
+                            backBufferLength: 90,
+                            maxBufferLength: 30,
+                            maxMaxBufferLength: 60,
+                            startLevel: -1,
+                            autoStartLoad: true
+                        });
+                        
+                        hls.loadSource(videoUrl);
+                        hls.attachMedia(video);
+                        
+                        hls.on(Hls.Events.MEDIA_ATTACHED, function() {
+                            console.log('Media attached');
+                        });
+                        
+                        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                            videoContainer.innerHTML = '';
+                            videoContainer.appendChild(video);
+                            // 尝试播放
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    console.log('Auto-play failed:', error);
+                                    // 显示播放按钮，让用户手动播放
+                                    video.removeAttribute('autoplay');
+                                    videoContainer.innerHTML = '';
+                                    videoContainer.appendChild(video);
+                                });
+                            }
+                        });
+                        
+                        hls.on(Hls.Events.ERROR, function(event, data) {
+                            console.error('HLS Error:', data);
+                            if (data.fatal) {
+                                switch(data.type) {
+                                    case Hls.ErrorTypes.NETWORK_ERROR:
+                                        console.log('Network error, trying to recover...');
+                                        hls.startLoad();
+                                        break;
+                                    case Hls.ErrorTypes.MEDIA_ERROR:
+                                        console.log('Media error, trying to recover...');
+                                        hls.recoverMediaError();
+                                        break;
+                                    default:
+                                        showError('视频加载失败，请稍后重试');
+                                        break;
+                                }
+                            }
+                        });
+                        
+                    } catch (error) {
+                        console.error('HLS Error:', error);
+                        showError('视频播放器初始化失败');
+                    }
+                } else {
+                    // 不支持HLS.js，尝试原生播放
+                    const video = document.createElement('video');
+                    video.controls = true;
+                    video.autoplay = true;
+                    video.playsInline = true;
+                    video.style.width = '100%';
+                    video.style.height = '100%';
+                    video.style.maxHeight = '80vh';
+                    video.setAttribute('webkit-playsinline', '');
+                    video.setAttribute('playsinline', '');
+                    
+                    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = videoUrl;
+                        video.addEventListener('loadedmetadata', function() {
+                            videoContainer.innerHTML = '';
+                            videoContainer.appendChild(video);
+                            const playPromise = video.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(error => {
+                                    console.log('Auto-play failed:', error);
+                                    video.removeAttribute('autoplay');
+                                    videoContainer.innerHTML = '';
+                                    videoContainer.appendChild(video);
+                                });
+                            }
+                        });
+                        video.addEventListener('error', function() {
+                            showError('视频加载失败');
+                        });
+                    } else {
+                        showError('您的浏览器不支持此视频格式');
+                    }
+                }
+            } else {
+                // 普通MP4格式
+                const video = document.createElement('video');
+                video.controls = true;
+                video.autoplay = true;
+                video.playsInline = true;
+                video.style.width = '100%';
+                video.style.height = '100%';
+                video.style.maxHeight = '80vh';
+                video.setAttribute('webkit-playsinline', '');
+                video.setAttribute('playsinline', '');
+                video.src = videoUrl;
+                
+                video.addEventListener('loadedmetadata', function() {
+                    videoContainer.innerHTML = '';
+                    videoContainer.appendChild(video);
+                    const playPromise = video.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            console.log('Auto-play failed:', error);
+                            video.removeAttribute('autoplay');
+                            videoContainer.innerHTML = '';
+                            videoContainer.appendChild(video);
+                        });
+                    }
+                });
+                
+                video.addEventListener('error', function() {
+                    showError('视频加载失败');
+                });
+            }
+            
+            currentVideo = videoUrl;
+        }
+        
+        function showError(message) {
+            const videoContainer = document.getElementById('videoContainer');
+            videoContainer.innerHTML = `
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>${message}</p>
+                    <button onclick="closeVideo()" style="margin-top: 20px; padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">关闭</button>
+                </div>
+            `;
+        }
+        
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const videoContainer = document.getElementById('videoContainer');
+            
+            modal.classList.remove('active');
+            
+            // 停止视频播放
+            if (currentVideo) {
+                const video = videoContainer.querySelector('video');
+                if (video) {
+                    video.pause();
+                }
+            }
+            
+            // 销毁HLS实例
+            if (hls) {
+                hls.destroy();
+                hls = null;
+            }
+            
+            // 清空容器
+            videoContainer.innerHTML = '';
+            currentVideo = null;
+        }
+        
+        // 跳转链接功能
+        function goToLink(url) {
+            window.location.href = url;
+        }
+        
+        // 点击模态框背景关闭
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+        
+        // ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideo();
+            }
+        });
+        
+        // 页面加载完成后的优化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('页面加载完成');
+            
+            // 预加载关键资源
+            const preloadImages = [
+                'https://picsum.photos/seed/banner1/800/450',
+                'https://picsum.photos/seed/banner2/800/450',
+                'https://picsum.photos/seed/banner3/800/450'
+            ];
+            
+            preloadImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
+            });
+        });
+        
+        // 检测设备类型并优化
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        // 移动端优化
+        if (isMobile()) {
+            // 禁用双击缩放
+            document.addEventListener('touchstart', function(e) {
+                if (e.touches.length > 1) {
+                    e.preventDefault();
+                }
+            });
+            
+            // 优化视频播放
+            document.addEventListener('click', function(e) {
+                const movieItem = e.target.closest('.movie-item');
+                if (movieItem && !e.target.closest('.play-overlay')) {
+                    // 延迟播放，避免和点击事件冲突
+                    setTimeout(() => {
+                        const videoUrl = movieItem.getAttribute('data-video');
+                        const title = movieItem.getAttribute('data-title');
+                        if (videoUrl && title) {
+                            playVideo(videoUrl, title);
+                        }
+                    }, 100);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
